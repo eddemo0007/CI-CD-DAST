@@ -70,7 +70,7 @@ try:
     print("Looked for app " + dynamic_job)
     uuid = response #elg
     print("Made it past response")
-    uuid = response['_embedded']['applications'][0]['guid']
+    #uuid = response['_embedded']['applications'][0]['guid']
 except:
     print("response failed")
     print("Error executing API Call")
