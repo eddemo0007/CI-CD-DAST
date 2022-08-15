@@ -22,16 +22,17 @@ steps:
     pip install -r requirements.txt
   displayName: 'Install dependencies'
   
-- script:
-    echo $(DYNAMIC_USER)
-  displayName: 'Display Variables'
+#- script:
+#    echo $(DYNAMIC_USER)
+#  displayName: 'Display Variables'
 
 - script: |
     export Dynamic_Target=$(DYNAMIC_TARGET)
-    export JOB_NAME='$(system.teamProject)_ADO_yaml'
+    export JOB_NAME='Verademo.net-Dynamic-Analysis_ADO_yaml'
     export VeraID=$(VERAID)
     export VeraPW=$(VERAPW)
     export Dynamic_User=$(DYNAMIC_USER)
     export Dynamic_Pass=$(DYNAMIC_PASS)
     python create-or-update-da-scan.py
   displayName: 'Create or update and run the Dynamic Analysis'
+#    export JOB_NAME='$(system.teamProject)_ADO_yaml'
