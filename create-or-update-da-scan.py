@@ -21,7 +21,7 @@ login_pass = os.getenv("Dynamic_Pass")
 print("Dynamic Target is: " + dynamic_target)
 print("Login user is: " + login_user)
 dynamic_job = os.getenv("JOB_NAME") #Dynamic Job name will be same as environment variable
-print("dynamic_job is: " + dynamic_job). #elg
+print("dynamic_job is: " + dynamic_job) #elg
 
 def veracode_hmac(host, url, method):
     signing_data = 'id={api_id}&host={host}&url={url}&method={method}'.format(
