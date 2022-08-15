@@ -65,8 +65,9 @@ def prepared_request(method, end_point, json=None, query=None, file=None):
 res = prepared_request('GET','https://api.veracode.com/appsec/v1/applications/?name=' + dynamic_job)
 
 response = res.json()
+print("response is: " + response) #elg
 try:
-    print("looked for app " + dynamic_job)
+    print("Looked for app " + dynamic_job)
     uuid = response['_embedded']['applications'][0]['guid']
 except:
     print("response failed")
