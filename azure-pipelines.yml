@@ -27,7 +27,7 @@ steps:
 
 - script: |
     export Dynamic_Target=$(DYNAMIC_TARGET)
-    export JOB_NAME='$(system.teamProject)_ADO_yaml'
+    export JOB_NAME='$(system.teamProject)-API-Scan'
     export PIPELINE_ID=$(Build.BuildNumber)
     export VERACODE_ID=$(VERAID)
     export VERACODE_KEY=$(VERAPW)
@@ -35,3 +35,4 @@ steps:
     export API_NAME=$(API_NAME)
     python create-api-spec-scan.py
   displayName: 'Create or update and run a Dynamic Analysis API Scan'
+      #export JOB_NAME='$(system.teamProject)_ADO_yaml'
