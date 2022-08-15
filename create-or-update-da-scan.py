@@ -28,6 +28,7 @@ def veracode_hmac(host, url, method):
                     api_id=api_id.lower(),
                     host=host.lower(),
                     url=url, method=method.upper())
+print("signing_data is: " + signing_data) #elg
 
     timestamp = int(round(time.time() * 1000))
     nonce = os.urandom(16).hex()
@@ -63,6 +64,7 @@ def prepared_request(method, end_point, json=None, query=None, file=None):
 # code above this line is reusable for all/most API calls
 
 res = prepared_request('GET','https://api.veracode.com/appsec/v1/applications/?name=' + dynamic_job)
+print("res is: " + res) #elg
 response = res.json()
 try:
     print("looked for app" + dynamic_job)
