@@ -21,6 +21,10 @@ steps:
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
+  
+- script:
+    echo $(DYNAMIC_USER)
+  displayName: 'Display Variables'
 
 - script: |
     export Dynamic_Target=$(DYNAMIC_TARGET)
