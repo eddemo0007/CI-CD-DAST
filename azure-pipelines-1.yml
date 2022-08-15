@@ -28,7 +28,7 @@ steps:
 
 - script: |
     export Dynamic_Target=$(DYNAMIC_TARGET)
-    export export JOB_NAME='$(system.teamProject)_ADO_yaml'
+    export export JOB_NAME='$(system.teamProject)-Dynamic-Analysis'
     export VeraID=$(VERAID)
     export VeraPW=$(VERAPW)
     export Dynamic_User=$(DYNAMIC_USER)
