@@ -178,8 +178,8 @@ data =   {
        "auth_configuration": {
          "authentications": {
             "AUTO": {
-               "username": login_user,
-               "password": login_pass,
+               "username": api_id, #elg was login_user
+               "password": api_secret, #elg was login_pass
                "authtype": "AUTO"
              }
            }
