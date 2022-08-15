@@ -68,6 +68,8 @@ response = res.json()
 print("response is: " + str(response)) #elg
 try:
     print("Looked for app " + dynamic_job)
+    uuid = response #elg
+    print("Made it past response")
     uuid = response['_embedded']['applications'][0]['guid']
 except:
     print("response failed")
