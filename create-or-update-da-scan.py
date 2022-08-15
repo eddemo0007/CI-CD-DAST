@@ -28,7 +28,6 @@ def veracode_hmac(host, url, method):
                     api_id=api_id.lower(),
                     host=host.lower(),
                     url=url, method=method.upper())
-print("signing_data is: " + signing_data) #elg
 
     timestamp = int(round(time.time() * 1000))
     nonce = os.urandom(16).hex()
