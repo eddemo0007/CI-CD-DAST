@@ -21,7 +21,6 @@ login_pass = os.getenv("Dynamic_Pass")
 print("Dynamic Target is: " + dynamic_target)
 print("Login user is: " + login_user)
 dynamic_job = os.getenv("JOB_NAME") #Dynamic Job name will be same as environment variable
-print("dynamic_job is: " + dynamic_job) #elg
 
 def veracode_hmac(host, url, method):
     signing_data = 'id={api_id}&host={host}&url={url}&method={method}'.format(
@@ -63,16 +62,15 @@ def prepared_request(method, end_point, json=None, query=None, file=None):
 # code above this line is reusable for all/most API calls
 
 res = prepared_request('GET','https://api.veracode.com/appsec/v1/applications/?name=' + dynamic_job)
-
 response = res.json()
-print("response is: " + str(response)) #elg
 try:
-    print("Looked for app " + dynamic_job)
-    uuid = response #elg
-    print("Made it past response")
-    #uuid = response['_embedded']['applications'][0]['guid']
+    print("looked for app" + dynamic_job)
+    print("Status code: " + str(res.status_code) )
+    response = res.json()
+    print("Response is: " + str(response))
+    uuid = response['_embedded']['applications'][0]['guid']
 except:
-    print("response failed")
+    print("response failed: "+ res.status_code)
     print("Error executing API Call")
     sys.exit(1)
 
@@ -100,8 +98,8 @@ except:
            "auth_configuration": {
              "authentications": {
                 "AUTO": {
-                   "username": login_user, 
-                   "password": login_pass, 
+                   "username": login_user,
+                   "password": login_pass,
                    "authtype": "AUTO"
                  }
                }
@@ -178,8 +176,8 @@ data =   {
        "auth_configuration": {
          "authentications": {
             "AUTO": {
-               "username": login_user, 
-               "password": login_pass, 
+               "username": login_user,
+               "password": login_pass,
                "authtype": "AUTO"
              }
            }
