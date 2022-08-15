@@ -100,8 +100,8 @@ except:
            "auth_configuration": {
              "authentications": {
                 "AUTO": {
-                   "username": api_id, #elg was login_user
-                   "password": api_secret, #elg was login_pass
+                   "username": login_user, 
+                   "password": login_pass, 
                    "authtype": "AUTO"
                  }
                }
