@@ -1,5 +1,8 @@
 # Demo pipeline to conduct a Veracod Dynamic Analysis Scan (create or update)
 
+# This Pipeline will scan my Verademo app from the Vulnerable Apps within my Demo Labs Instance
+# Don't forget to do a Reset after creating the Verademo app
+
 trigger:
 #- master
 - none
