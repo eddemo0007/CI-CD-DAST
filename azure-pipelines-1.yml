@@ -33,7 +33,7 @@ steps:
 
 - script: |
     export Dynamic_Target=$(DYNAMIC_TARGET)
-    export export JOB_NAME='Verademo0001'
+    export export JOB_NAME='Veracode Demo using Azure DevOps'
     export VeraID=$(VERAID)
     export VeraPW=$(VERAPW)
     export Dynamic_User=$(DYNAMIC_USER)
