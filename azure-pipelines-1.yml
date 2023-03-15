@@ -30,10 +30,11 @@ steps:
 #  displayName: 'Display Variables'
 
 #   export export JOB_NAME='$(system.teamProject)-Dynamic-Analysis'
+#   export export JOB_NAME='Veracode Demo using Azure DevOps'
 
 - script: |
     export Dynamic_Target=$(DYNAMIC_TARGET)
-    export export JOB_NAME='Veracode Demo using Azure DevOps'
+    export export JOB_NAME='Verademo-dotnet-0002'
     export VeraID=$(VERAID)
     export VeraPW=$(VERAPW)
     export Dynamic_User=$(DYNAMIC_USER)
